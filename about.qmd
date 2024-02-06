@@ -1,6 +1,6 @@
 ---
 title: About
-image: NancyMiranda_blogprofile.jpg
+image: ncm_blogprofile.jpg
 about:
   template: jolla
 ---
