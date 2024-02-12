@@ -2,7 +2,7 @@
 title: About
 image: ncm_blogprofile.jpg
 about:
-  template: jolla
+  template: minty
 ---
 
 About this blog
