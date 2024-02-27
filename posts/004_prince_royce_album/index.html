@@ -7,10 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Nancy Miranda">
-<meta name="dcterms.date" content="2024-02-13">
-<meta name="description" content="How well can AI cook up personalized Valentine’s Day Activities According to your Date’s Hogwarts House?">
+<meta name="dcterms.date" content="2024-02-16">
+<meta name="description" content="Can dall-e-3 predict what Prince Royce’s new album cover will look like?">
 
-<title>Prompting LLMs - Personalized Valentine’s Day Itineraries</title>
+<title>Prompting LLMs - Album Cover Predicitions with Dalle-3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -150,16 +150,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Personalized Valentine’s Day Itineraries</h1>
+      <h1 class="title">Album Cover Predicitions with Dalle-3</h1>
                   <div>
         <div class="description">
-          How well can AI cook up personalized Valentine’s Day Activities According to your Date’s Hogwarts House?
+          Can dall-e-3 predict what Prince Royce’s new album cover will look like?
         </div>
       </div>
                           <div class="quarto-categories">
                 <div class="quarto-category">LLMs</div>
                 <div class="quarto-category">Prompting</div>
                 <div class="quarto-category">gpt-4</div>
+                <div class="quarto-category">dall-e-3</div>
               </div>
                   </div>
   </div>
@@ -177,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 13, 2024</p>
+        <p class="date">February 16, 2024</p>
       </div>
     </div>
     
@@ -196,154 +197,137 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="can-gpt-4-write-up-the-perfect-valentines-day-according-to-hogwarts-house-personality" class="level2">
-<h2 class="anchored" data-anchor-id="can-gpt-4-write-up-the-perfect-valentines-day-according-to-hogwarts-house-personality">Can <code>gpt-4</code> Write Up the Perfect Valentine’s Day According to Hogwarts House Personality?</h2>
-<p>With Valentine’s Day around the corner, it’s the perfect time to prompt some LLM’s to generate a last minute Valentine’s Day itinerary for your potential date. Of course, the only thing you know about them is their Hogwarts House, and you fully rely on this one fact to impress your crush.</p>
-<p><code>gpt-4</code> was assigned the <strong>role of “An assistant who knows a lot about Hogwarts Houses”</strong> and was given the following House descriptions from the Wizarding World website:</p>
+<section id="can-gpt-4-and-dall-e-3-predict-prince-royces-new-album-cover" class="level2">
+<h2 class="anchored" data-anchor-id="can-gpt-4-and-dall-e-3-predict-prince-royces-new-album-cover">Can <code>gpt-4</code> and <code>dall-e-3</code> Predict Prince Royce’s New Album Cover?</h2>
+<p>Singer sensation Prince Royce was at his peak in the 2010’s with his contemporary bachata drops. Prince Royce is dropping a new album February 16, 2024 and has been extremely teased to his fans. Given the sneak peaks of his new album (tracklist + album description), can AI predict the album cover? And once the album comes out, how accurate will the prediction have been?</p>
+<section id="gpt-4-create-a-dall-e-3-image-description-for-the-new-prince-royce-album-cover" class="level3">
+<h3 class="anchored" data-anchor-id="gpt-4-create-a-dall-e-3-image-description-for-the-new-prince-royce-album-cover">1. <code>gpt-4</code>: <em>“Create a <code>dall-e-3</code> image description for the new Prince Royce Album Cover”</em></h3>
+</section>
+<section id="dall-e-3-insert-gpt-4-description" class="level3">
+<h3 class="anchored" data-anchor-id="dall-e-3-insert-gpt-4-description">2. <code>dall-e-3</code>: * <em>insert <code>gpt-4</code> description</em> *</h3>
+</section>
+</section>
+<section id="gpt-4-setup" class="level2">
+<h2 class="anchored" data-anchor-id="gpt-4-setup"><code>gpt-4</code> Setup</h2>
+<p>To set up the model, I… - Gave the system a short bio straight from the <a href="https://www.princeroyce.com/bio-en.html">Prince Royce</a> website</p>
+<ul>
+<li>I then also fed it the revealed tracklist and a short album description</li>
+</ul>
+<p>The model setup looked like this:</p>
+<div id="428bda1e-97f4-49d7-a273-b53d1c522c22" class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> <span class="st">"gpt-4"</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>system_role <span class="op">=</span> <span class="st">"You are a knowledgeable professional in the music industry to Latin sensation Prince Royce"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">        In the past 8 years, multi-platinum award-winning, singer/songwriter Prince Royce has become a bona fide Latin superstar, </span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">        scoring 17 #1 radio hits and winning more than 80 awards and recognitions including: 22 Latin Billboard Awards, 19 Premio lo Nuestro Awards, </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">        19 Premios Juventud Awards, 6 Latin AMAs, and 12 Latin GRAMMY nominations. Royce has a massive fan base with over 55 million followers on social media </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">        and he has sold out many of the most prestigious venues in Latin America and the United States. In February 2019 Prince Royce made history becoming the </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">        first and only tropical music artist to perform at the Houston Rodeo at the NRG Stadium where he attracted more than 55,000 euphoric fans. </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">        All of his albums have been certified multiplatinum. His latest album, FIVE, was released in February 2017 and is Royce’s fifth career album. </span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">        The record debuted at #1 on Billboard's Latin Albums chart and earned Royce the highest first-week sales of any Latin album in the two years prior to the release. </span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">        The album has been certified Triple Platinum by the RIAA in the United States and has garnered multiple international certifications. </span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">        FIVE, made the Top Latin Albums list at Billboard’s coveted end of the year issue and Billboard also named Royce one of the Top Latin Artists of 2017.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">        Some of his collaborations include: Shakira, Chris Brown, Jennifer Lopez, Selena Gomez, Snoop Dogg, Pitbull, Thalia, Maná, Daddy Yankee, Becky G, Anitta, Ludacris, J Balvin, Bad Bunny, Farruko, and Maluma, among others. </span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">        Prince Royce has also started to pursue an acting career; he co-starred as Peter in the Fox Live musical broadcast of “The Passion” in 2016 and was part of the cast of Hulu’s hit series, “East Los High”.</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">        August 9, 2018 was proclaimed "Prince Royce Day" in New York by Mayor Bill de Blasio, in recognition of his contributions to society and for being a role model to youth in his home town. </span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">        He has been induced into the Bronx Hall of Fame with a street named after him, and ran the New York City Marathon to raise funds and awareness on education in public schools and kidney disease.</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">'''</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>initial_prompt <span class="op">=</span> <span class="st">'''</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">Prince Royce is about to drop a new album in February 2024. The album name is "Llamada Perdida" and tracklist includes: </span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">1. La Corriente</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="st">2. No Te Vayas</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st">3. Sufro</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st">4. Te Espero</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="st">5. Llamada Perdida</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="st">6. Champaña</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="st">7. Boogie Chata</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="st">8. Borrador</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="st">9. Los Lambones</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="st">10. Anestesiada</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="st">11. Cosas de la Peda</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="st">12. Si Ya No Volveras</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="st">13. Morfina</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="st">14. Como Salimos de Este Lío?</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="st">15. La Vida Te Hace Fuerte</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="st">16. Si Te Preguntan...</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="st">17. Matar El Sentimiento</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="st">18. Frío en El Infierno</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="st">19. Un Papel</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="st">20. Me Enrd</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a><span class="st">21. Otra Vez</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="st">22. Le Doy Mil</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="st">23. Lao' a Lao' </span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="st">and a short album description includes: </span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="st">"Fans can expect to hear Prince Royce's signature sound while also experiencing a new and elevated level of artistry on "Llamada Perdida”.  </span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="st">The album is a testament to Royce's growth as an artist, with more mature lyrics and a more self-confident sound. </span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="st">The songs are strewn together via voicemail messages, serving as interludes to certain tracks."</span></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="st">Create a dall-e-3 description of an album cover that will best fit the descriptions of this new album and its songs.</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="st">        '''</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>messages <span class="op">=</span> [</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"system"</span>, <span class="st">"content"</span>: system_role} ,</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: initial_prompt}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="gpt-4-result" class="level2">
+<h2 class="anchored" data-anchor-id="gpt-4-result"><code>gpt-4</code> Result</h2>
+<blockquote class="blockquote">
+<p><em>Prompt:</em></p>
+<p>[Given the information] Create a dall-e-3 description of an album cover that will best fit the descriptions of this new album and its songs.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p><em>Response:</em></p>
+<p>The album cover for “Llamada Perdida” is a beautifully intricate and symbolic representation of Prince Royce’s journey as an artist. The main image is a vintage, rusted payphone located in the middle of a vibrant, bustling cityscape at dusk, evoking the theme of lost calls and missed connections. The payphone is adorned with colorful graffiti, each marking a symbol of a song on the album - a champagne glass for “Champaña”, an intricately sketched heart for “Matar El Sentimiento”, a crumpled paper for “Un Papel”, a wave for “La Corriente”, and so on. Prince Royce himself is depicted in the foreground, leaning against the payphone, dressed in a sleek black suit, his gaze focused on a crumpled piece of paper in his hand – perhaps a lost number, or the lyrics to his next song. His expression is one of contemplation and determination, reflecting the maturity of his lyrics and his self-confidence as an artist. His silhouette against the setting sun creates a striking contrast, symbolizing the end of one chapter and the beginning of another. The album title, “Llamada Perdida”, is written in bold, white letters at the top of the cover, standing out against the deep, twilight blue of the cityscape. The font is modern and edgy, adding to the contemporary feel of the cover. In contrast, Prince Royce’s name is displayed in a classic, elegant script at the bottom, a nod to his enduring presence in the Latin music scene. The overall aesthetic is a perfect blend of the old and the new, just like the music on the album itself.</p>
+</blockquote>
+</section>
+<section id="dall-e-3-setup" class="level2">
+<h2 class="anchored" data-anchor-id="dall-e-3-setup"><code>dall-e-3</code> Setup</h2>
+<p>I then inserted this description into a <code>dall-e-3 model</code> to generate the image.</p>
+<div id="3420a82b-8569-430b-bca7-80c1816362f4" class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI()</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.images.generate(</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"dall-e-3"</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    prompt<span class="op">=</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="st">'''</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">The album cover for "Llamada Perdida" is a beautifully intricate and symbolic representation of Prince Royce's journey as an artist. </span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">The main image is a vintage, rusted payphone located in the middle of a vibrant, bustling cityscape at dusk, evoking the theme of lost calls and missed connections. </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="st">The payphone is adorned with colorful graffiti, each marking a symbol of a song on the album - a champagne glass for "Champaña", an intricately sketched heart for "Matar El Sentimiento", </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">a crumpled paper for "Un Papel", a wave for "La Corriente", and so on. Prince Royce himself is depicted in the foreground, leaning against the payphone, </span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">dressed in a sleek black suit, his gaze focused on a crumpled piece of paper in his hand – perhaps a lost number, or the lyrics to his next song. </span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">His expression is one of contemplation and determination, reflecting the maturity of his lyrics and his self-confidence as an artist. </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">His silhouette against the setting sun creates a striking contrast, symbolizing the end of one chapter and the beginning of another. The album title, "Llamada Perdida", </span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">is written in bold, white letters at the top of the cover, standing out against the deep, twilight blue of the cityscape. The font is modern and edgy, </span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">adding to the contemporary feel of the cover. In contrast, Prince Royce's name is displayed in a classic, elegant script at the bottom, </span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">a nod to his enduring presence in the Latin music scene. The overall aesthetic is a perfect blend of the old and the new, just like the music on the album itself.</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">'''</span>,</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    size<span class="op">=</span><span class="st">"1024x1024"</span>,</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>    quality<span class="op">=</span><span class="st">"standard"</span>,</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>    n<span class="op">=</span><span class="dv">1</span>,</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>image_url <span class="op">=</span> response.data[<span class="dv">0</span>].url</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="dall-e-3-result" class="level2">
+<h2 class="anchored" data-anchor-id="dall-e-3-result"><code>dall-e-3</code> Result</h2>
+<p>This prompt generated this album cover:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="https://www.wizardingworld.com/features/hogwarts-house-meanings" title="Hogwarts Houses Descriptions"><img src="hogwarts_houses.jpeg" class="img-fluid figure-img" alt="Hogwarts Houses Descriptions"></a></p>
-<figcaption>Hogwarts Houses Descriptions</figcaption>
+<p><img src="album_cover_predicition.png" class="img-fluid figure-img"></p>
+<figcaption>First Album Cover Predicition</figcaption>
 </figure>
 </div>
-</section>
-<section id="a-ravenclaws-perfect-valentines-day" class="level2">
-<h2 class="anchored" data-anchor-id="a-ravenclaws-perfect-valentines-day">A <strong>Ravenclaw’s</strong> Perfect Valentine’s Day</h2>
-<section id="what-did-gpt-4-come-up-with-when-asked-to-create-an-itinerary-for-a-ravenclaw" class="level3">
-<h3 class="anchored" data-anchor-id="what-did-gpt-4-come-up-with-when-asked-to-create-an-itinerary-for-a-ravenclaw">What did <code>gpt-4</code> come up with when asked to create an itinerary for a Ravenclaw?</h3>
-<blockquote class="blockquote">
-<p><em>Prompt:</em></p>
-<p>Using your extensive knowledge on the Hogwarts Houses and their personalities, help the user construct the perfect Valentine’s Day itineraries for their potential date who is a <strong>Ravenclaw</strong>. The itinerary should <strong>include one of three meals</strong> (brunch, lunch, or dinner) accompanied by <strong>at least one activity</strong> preceding or following the meal or both. The whole itinerary <strong>should not exceed more than 6 hours of the day</strong>.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><em>Response:</em></p>
-<p>Sure, I’d be happy to help with this! Given that a Ravenclaw values intellect and wit, your itinerary should reflect a mix of thoughtful activities and engaging conversation. Here’s a proposed itinerary for a Ravenclaw Valentine’s Day:</p>
-<ol type="1">
-<li><p><strong>Visit to a Museum (10:00 AM - 12:30 PM)</strong>: Start the day with a trip to a local museum. Whether it’s art, history, or science, a Ravenclaw is sure to appreciate the chance to learn something new. Make sure to engage in meaningful discussions about the exhibits - this will show your Ravenclaw date that you value their intellect.</p></li>
-<li><p><strong>Lunch at a Unique, Themed Restaurant (1:00 PM - 2:30 PM)</strong>: Ravenclaws are known for their creativity and individuality, so choosing a restaurant with a unique theme or unusual menu will pique their interest. This could be a restaurant with a literary theme, or one that serves dishes from a cuisine they’ve never tried before.</p></li>
-<li><p><strong>Bookstore or Library Visit (3:00 PM - 4:30 PM)</strong>: After lunch, head to a local bookstore or library. Ravenclaws love reading and learning, so this will be a perfect leisurely activity. You could each choose a book for the other to read, or find a quiet corner and read together.</p></li>
-<li><p><strong>Stargazing (5:00 PM - 6:00 PM)</strong>: End the day with a peaceful session of stargazing. Ravenclaws are known for their wisdom and inquisitiveness, so they’ll love the chance to observe the cosmos and discuss the mysteries of the universe.</p></li>
-</ol>
-<p>Remember, the key to impressing a Ravenclaw is showing your own curiosity and enthusiasm for learning. Make sure to ask lots of questions and show genuine interest in their thoughts and ideas. This will surely make for a Valentine’s Day that a Ravenclaw will remember.</p>
-</blockquote>
-</section>
-</section>
-<section id="a-gryffindorss-perfect-valentines-day" class="level2">
-<h2 class="anchored" data-anchor-id="a-gryffindorss-perfect-valentines-day">A <strong>Gryffindors’s</strong> Perfect Valentine’s Day</h2>
-<section id="what-did-gpt-4-come-up-with-when-asked-to-create-an-itinerary-for-a-gryffindor" class="level3">
-<h3 class="anchored" data-anchor-id="what-did-gpt-4-come-up-with-when-asked-to-create-an-itinerary-for-a-gryffindor">What did <code>gpt-4</code> come up with when asked to create an itinerary for a Gryffindor?</h3>
-<blockquote class="blockquote">
-<p><em>Prompt:</em></p>
-<p>Using your extensive knowledge on the Hogwarts Houses and their personalities, help the user construct the perfect Valentine’s Day itineraries for their potential date who is a <strong>Gryffindor</strong>. The itinerary should <strong>include one of three meals</strong> (brunch, lunch, or dinner) accompanied by <strong>at least one activity</strong> preceding or following the meal or both. The whole itinerary <strong>should not exceed more than 6 hours of the day</strong>.</p>
-</blockquote>
-</section>
-<section id="a-clarification-of-the-real-world" class="level3">
-<h3 class="anchored" data-anchor-id="a-clarification-of-the-real-world">A clarification of the real world</h3>
-<p>This second time around–although I had inputted the same prompt only with a different Hogwarts House–<code>gpt-4</code> <strong>responded with a fictional itinerary</strong> in accordance with the fictional world of Hogwarts, which in short looked like:</p>
-<blockquote class="blockquote">
-<p>Fictional Response:</p>
-<p><strong>13:00 - 15:00: Quidditch Match</strong></p>
-<p><strong>15:30 - 17:00: Late Lunch in Hogsmeade</strong></p>
-<p><strong>17:30 - 18:30: Visit to the Shrieking Shack</strong></p>
-<p><strong>18:30 - 19:00: Sunset by the Black Lake</strong></p>
-</blockquote>
-</section>
-<section id="the-following-clarification-was-given" class="level3">
-<h3 class="anchored" data-anchor-id="the-following-clarification-was-given">The following clarification was given</h3>
-<div id="bbba3128-2c72-4f8e-8f15-64bdd0c900fc" class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"do not write the itineraries within the fictional Hogwarts World. Assume it is a real life itinerary."</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>The response now looked a lot more similar to our Ravenclaw itinerary.</p>
-<blockquote class="blockquote">
-<p><em>Response:</em></p>
-<p>Certainly! Here’s a Valentine’s Day itinerary for someone who embodies the spirit of Gryffindor:</p>
-<p><strong>12:00 PM: Outdoor Adventure Hike:</strong> Start your morning with an exciting outdoor adventure. Gryffindors are known for their daring, nerve, and chivalry. They love a challenge and the thrill of adventure. Plan a scenic hike at a local nature reserve or park. This will give you the chance to enjoy each other’s company while appreciating the beauty of nature.</p>
-<p><strong>2:30 PM: Picnic Brunch:</strong> Pack a hearty brunch to enjoy after your hike. Gryffindors appreciate straightforward, hearty meals. Sandwiches, fruits, and some homemade pastries would work wonderfully. Don’t forget a thermos of hot chocolate or coffee to warm up after your hike.</p>
-<p><strong>4:00 PM: Historical Tour or Museum Visit:</strong> Gryffindors have a great respect for history and tradition. Visit a local museum or historical site in your city to ignite their love for heritage and legacy. This will also provide a great conversation starter as you explore together.</p>
-<p><strong>6:00 PM: Casual Dinner:</strong> End the day with a casual yet hearty dinner at a cozy restaurant. Gryffindors would appreciate a warm, welcoming atmosphere and good, hearty food. They’re not overly concerned with fancy or elaborate meals, so a local favorite with good reviews should do the trick.</p>
-<p>Remember, the most important thing is to have fun and enjoy each other’s company. Gryffindors value authenticity, so be yourself and let your genuine affection shine through.</p>
-</blockquote>
-</section>
-</section>
-<section id="a-hufflepuffs-perfect-valentines-day" class="level2">
-<h2 class="anchored" data-anchor-id="a-hufflepuffs-perfect-valentines-day">A <strong>Hufflepuff’s</strong> Perfect Valentine’s Day</h2>
-<section id="what-did-gpt-4-come-up-with-when-asked-to-create-an-itinerary-for-a-hufflepuff" class="level3">
-<h3 class="anchored" data-anchor-id="what-did-gpt-4-come-up-with-when-asked-to-create-an-itinerary-for-a-hufflepuff">What did <code>gpt-4</code> come up with when asked to create an itinerary for a Hufflepuff?</h3>
-<blockquote class="blockquote">
-<p><em>Prompt:</em></p>
-<p>Using your extensive knowledge on the Hogwarts Houses and their personalities, help the user construct the perfect Valentine’s Day itineraries for their potential date who is a <strong>Hufflepuff</strong>. The itinerary should <strong>include one of three meals</strong> (brunch, lunch, or dinner) accompanied by <strong>at least one activity</strong> preceding or following the meal or both. The whole itinerary <strong>should not exceed more than 6 hours of the day</strong>.</p>
-</blockquote>
-</section>
-<section id="a-second-clarification" class="level3">
-<h3 class="anchored" data-anchor-id="a-second-clarification">A second clarification</h3>
-<p><code>gpt-4</code> now seemed to forget to keep the itinerary under 6 hours. The following clarification was added:</p>
-<div id="27e48cc0-57f1-4f2e-ab8a-4d7b1bced582" class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"The itinerary should not span over more than 6 hours of the day."</span>}]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<blockquote class="blockquote">
-<p><em>Response:</em></p>
-<p>Absolutely, I understand. Here’s a real-world, Valentine’s Day itinerary for your Hufflepuff date:</p>
-<p><strong>Brunch at a Farm-to-Table Restaurant (1.5 hours)</strong> Start your day off by enjoying a brunch together at a local farm-to-table restaurant. Hufflepuffs appreciate hard work and honesty, and they would love the authentic and fresh food that such a place provides. Try to find a restaurant with a friendly and welcoming atmosphere, as Hufflepuffs value comfort and a sense of community.</p>
-<p><strong>Visit to a Local Botanical Garden (2 hours)</strong> Following brunch, head to a local botanical garden to enjoy some time in nature. Hufflepuffs, with their House emblem being the badger, have a strong connection to the earth and will appreciate the beauty and tranquility of a botanical garden. This can be a great opportunity to have a gentle stroll, engage in deep conversations, and enjoy each other’s company.</p>
-<p><strong>Pottery Class (2 hours)</strong> After spending time in the garden, partake in a pottery class. Hufflepuffs are known for their patience, dedication, and diligent hands, so they would likely enjoy an activity that allows them to create something beautiful from scratch. Pottery classes are also very hands-on and interactive, providing a fun and intimate experience for both of you.</p>
-<p><strong>Coffee and Dessert at a Cozy Cafe (0.5 hours)</strong> To end your day, stop by a cozy local cafe for some coffee and dessert. This will allow you to wind down from the day’s activities, and provide a perfect opportunity for some quiet conversation. Remember to select a place that has a warm and welcoming vibe, as this is something that a Hufflepuff would particularly enjoy.</p>
-<p>This itinerary keeps the total time to 6 hours, and includes a variety of activities that cater to a Hufflepuff’s personality and preferences.</p>
-</blockquote>
-</section>
-</section>
-<section id="a-slytherins-perfect-valentines-day" class="level2">
-<h2 class="anchored" data-anchor-id="a-slytherins-perfect-valentines-day">A <strong>Slytherin’s</strong> Perfect Valentine’s Day</h2>
-<section id="what-did-gpt-4-come-up-with-when-asked-to-create-an-itinerary-for-a-slytherin" class="level3">
-<h3 class="anchored" data-anchor-id="what-did-gpt-4-come-up-with-when-asked-to-create-an-itinerary-for-a-slytherin">What did <code>gpt-4</code> come up with when asked to create an itinerary for a Slytherin?</h3>
-<blockquote class="blockquote">
-<p><em>Prompt:</em></p>
-<p>Using your extensive knowledge on the Hogwarts Houses and their personalities, help the user construct the perfect Valentine’s Day itineraries for their potential date who is a <strong>Slytherin</strong>. The itinerary should <strong>include one of three meals</strong> (brunch, lunch, or dinner) accompanied by <strong>at least one activity</strong> preceding or following the meal or both. The whole itinerary <strong>should not exceed more than 6 hours of the day</strong>.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><em>Response:</em></p>
-<p>Perfect, let’s make a Valentine’s Day itinerary suitable for a person who embodies the traits of a Slytherin: ambitious, resourceful, and a bit of a luxury lover.</p>
-<p>Here’s the plan for a 6 hour Valentine’s Day date:</p>
-<p>Start Time: 3:00 PM</p>
-<p>End Time: 9:00 PM</p>
-<p><strong>3:00 PM - 5:00 PM: Visit an Art Gallery</strong> Start the afternoon by visiting a contemporary art gallery. Slytherins appreciate fine and luxurious things, and the thought-provoking nature of art can spark interesting conversations. It’s a quiet, intimate setting which allows for getting to know each other better.</p>
-<p><strong>5:30 PM - 7:00 PM: Fine Dining Dinner</strong> After the gallery, head to a high-end restaurant for a fine dining experience. Slytherins love the finer things in life, and nothing speaks more to that than a luxurious meal. A place with a sophisticated ambiance that serves dishes with exquisite presentation would be ideal. Make sure to reserve a table in advance.</p>
-<p><strong>7:30 PM - 9:00 PM: Luxury Yacht River Cruise</strong> End the evening with a private, luxury yacht river cruise. It’s a romantic setting that allows for intimate conversation, and the views of the city’s skyline from the river are truly spectacular. Also, the exclusivity of the experience aligns well with the Slytherin’s preference for things that are a cut above the ordinary.</p>
-<p>Remember, the key to impressing a Slytherin is to show thoughtfulness and ambition in your planning, by choosing unique and high-end experiences.</p>
-</blockquote>
-</section>
-</section>
-<section id="what-did-my-ravenclawgryffindorhufflepuffslytherin-friends-think-of-their-valentines-day-itinerary" class="level2">
-<h2 class="anchored" data-anchor-id="what-did-my-ravenclawgryffindorhufflepuffslytherin-friends-think-of-their-valentines-day-itinerary">What did my Ravenclaw/Gryffindor/Hufflepuff/Slytherin friends think of their Valentine’s Day itinerary?</h2>
-<table class="table">
-<colgroup>
-<col style="width: 44%">
-<col style="width: 55%">
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>Hogwarts House Representative</strong></th>
-<th><strong>Is this your perfect Valentine’s Day?</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Ravenclaw</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>Gryffindor</td>
-<td>Yes</td>
-</tr>
-<tr class="odd">
-<td>Hufflepuff</td>
-<td>Yes</td>
-</tr>
-<tr class="even">
-<td>Slytherin</td>
-<td>Yes</td>
-</tr>
-</tbody>
-</table>
 
 
 </section>
