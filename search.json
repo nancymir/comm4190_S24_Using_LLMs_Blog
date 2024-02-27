@@ -133,11 +133,18 @@
     "text": "dall-e-3 Setup\nI then inserted this description into a dall-e-3 model to generate the image.\n\nfrom openai import OpenAI\nclient = OpenAI()\n\nresponse = client.images.generate(\n    model=\"dall-e-3\",\n    prompt=\n\n'''\nThe album cover for \"Llamada Perdida\" is a beautifully intricate and symbolic representation of Prince Royce's journey as an artist. \nThe main image is a vintage, rusted payphone located in the middle of a vibrant, bustling cityscape at dusk, evoking the theme of lost calls and missed connections. \nThe payphone is adorned with colorful graffiti, each marking a symbol of a song on the album - a champagne glass for \"Champaña\", an intricately sketched heart for \"Matar El Sentimiento\", \na crumpled paper for \"Un Papel\", a wave for \"La Corriente\", and so on. Prince Royce himself is depicted in the foreground, leaning against the payphone, \ndressed in a sleek black suit, his gaze focused on a crumpled piece of paper in his hand – perhaps a lost number, or the lyrics to his next song. \nHis expression is one of contemplation and determination, reflecting the maturity of his lyrics and his self-confidence as an artist. \nHis silhouette against the setting sun creates a striking contrast, symbolizing the end of one chapter and the beginning of another. The album title, \"Llamada Perdida\", \nis written in bold, white letters at the top of the cover, standing out against the deep, twilight blue of the cityscape. The font is modern and edgy, \nadding to the contemporary feel of the cover. In contrast, Prince Royce's name is displayed in a classic, elegant script at the bottom, \na nod to his enduring presence in the Latin music scene. The overall aesthetic is a perfect blend of the old and the new, just like the music on the album itself.\n\n''',\n    \n    size=\"1024x1024\",\n    quality=\"standard\",\n    n=1,\n)\nimage_url = response.data[0].url"
   },
   {
-    "objectID": "posts/004_prince_royce_album/index.html#dall-e-3-result",
-    "href": "posts/004_prince_royce_album/index.html#dall-e-3-result",
+    "objectID": "posts/004_prince_royce_album/index.html#dall-e-3-results",
+    "href": "posts/004_prince_royce_album/index.html#dall-e-3-results",
     "title": "Album Cover Predicitions with Dalle-3",
-    "section": "dall-e-3 Result",
-    "text": "dall-e-3 Result\nThis prompt generated this album cover:\n\n\n\nFirst Album Cover Predicition"
+    "section": "dall-e-3 Results",
+    "text": "dall-e-3 Results\n\nThis prompt generated these three album covers:\n\n\n\nFirst Album Cover Prediction\n\n\nRegenerating the image with the same prompt resulted in this second image:\n\n\n\nThird Album Cover Prediction\n\n\nA third image with the same prompt:\n\n\n\nThird Album Cover Prediction"
+  },
+  {
+    "objectID": "posts/004_prince_royce_album/index.html#llamada-perdida-album-drop",
+    "href": "posts/004_prince_royce_album/index.html#llamada-perdida-album-drop",
+    "title": "Album Cover Predicitions with Dalle-3",
+    "section": "“Llamada Perdida” Album Drop",
+    "text": "“Llamada Perdida” Album Drop\n\nOn February 16, Prince Royce drops his new album and the album cover looks like this:\n\n\n\n“Llamada Perdida” Album Cover"
   },
   {
     "objectID": "about.html",
