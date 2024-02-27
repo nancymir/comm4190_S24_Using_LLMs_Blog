@@ -191,7 +191,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="LLMs">LLMs <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Prompting">Prompting <span class="quarto-category-count">(2)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="LLMs">LLMs <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Prompting">Prompting <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -205,50 +205,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1709003245962" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
-<div class="thumbnail">
-<p><a href="./posts/003_/vday_code.html" class="no-external"></a></p><a href="./posts/003_/vday_code.html" class="no-external">
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-</a><p><a href="./posts/003_/vday_code.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/003_/vday_code.html" class="no-external">Valentine’s Day Itinerary</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/003_/vday_code.html" class="no-external"></a>
-</div>
-<div class="listing-description">
-<a href="./posts/003_/vday_code.html" class="no-external">
-
-<section id="setup" class="level3">
-
-<div id="04a0c664-f0a0-49c4-ba43-6cb46a4100f8" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
-<span id="cb1-2"><span class="im">import</span> os</span>
-<span id="cb1-3"><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
-</div>
-</section>
-<section id="setup-apikey" class="level3">
-
-<div id="1825ddb4-c0f6-4ca1-8b5c-68d8b0e329ef" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">apikey <span class="op">=</span> <span class="bu">open</span>(<span class="st">'.apikey'</span>).read().strip()</span>
-<span id="cb2-2">os.environ[<span class="st">'OPENAI_API_KEY'</span>] <span class="op">=</span> apikey</span></code></pre></div>
-</div>
-</section>
-<section id="calling-chatgpt-using-the-api" class="level3">
-
-<div id="453892f3-dee1-497d-a1d1-1873fbed9785" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">model <span class="op">=</span> <span class="st">"gpt-4"</span></span>
-<span id="cb3-2">system_ro…<span class="op"></span><span class="st"></span></span><span id="cb3-3"><span class="co"></span></span><span id="cb3-4"><span class="co"></span></span><span id="cb3-5"><span class="co"></span></span><span id="cb3-6"><span class="co"></span></span><span id="cb3-7"><span class="co"></span></span><span id="cb3-8"><span class="co"></span></span><span id="cb3-9"><span class="co"></span></span><span id="cb3-10"></span><span id="cb3-11"><span class="co"></span></span><span id="cb3-12"><span class="co"></span></span><span id="cb3-13"><span class="co"></span></span><span id="cb3-14"><span class="co"></span></span><span id="cb3-15"><span class="co"></span></span><span id="cb3-16"><span class="co"></span></span><span id="cb3-17"></span><span id="cb3-18"><span class="co"></span></span><span id="cb3-19"><span class="co"></span></span><span id="cb3-20"><span class="co"></span></span><span id="cb3-21"><span class="co"></span></span><span id="cb3-22"><span class="co"></span></span><span id="cb3-23"><span class="co"></span></span><span id="cb3-24"></span><span id="cb3-25"><span class="co"></span></span><span id="cb3-26"><span class="co"></span></span><span id="cb3-27"><span class="co"></span></span><span id="cb3-28"><span class="co"></span></span><span id="cb3-29"><span class="co"></span></span><span id="cb3-30"><span class="co"></span></span><span id="cb3-31"></span><span id="cb3-32"><span class="op"></span><span class="st"></span></span><span id="cb3-33"><span class="st"></span></span><span id="cb3-34"><span class="st"></span></span><span id="cb3-35"><span class="st"></span></span><span id="cb3-36"><span class="st"></span></span><span id="cb3-37"><span class="st"></span></span><span id="cb3-38"><span class="st"></span></span><span id="cb3-39"></span><span id="cb3-40"><span class="op"></span></span><span id="cb3-41"><span class="st"></span><span class="st"></span><span class="st"></span></span><span id="cb3-42"><span class="st"></span><span class="st"></span><span class="st"></span></span></code></pre></div></div></section><section id="the-api-call" class="level3"><div id="627b5e2a-a098-46e6-86b5-1ced9e792403" class="cell" data-execution_count="13"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="op"></span></span><span id="cb4-2"></span><span id="cb4-3"><span class="op"></span></span><span id="cb4-4"><span class="op"></span><span class="co"></span></span><span id="cb4-5"><span class="op"></span><span class="co"></span></span><span id="cb4-6"><span class="op"></span><span class="dv"></span><span class="co"></span></span><span id="cb4-7"><span class="op"></span><span class="fl"></span><span class="co"></span></span><span id="cb4-8"></span><span id="cb4-9"></span><span id="cb4-10"><span class="op"></span><span class="dv"></span></span></code></pre></div></div><div id="d666a310-db7f-473a-adac-269cc1f624a9" class="cell" data-execution_count="12"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="cf"></span><span class="kw"></span></span><span id="cb5-2"><span class="bu"></span></span><span id="cb5-3"><span class="bu"></span></span></code></pre></div><div class="cell-output cell-output-stdout"><pre><code></code></pre></div></div></section></a>
-</div>
-</div>
-<div class="metadata">
-<p><a href="./posts/003_/vday_code.html" class="no-external"></a></p><a href="./posts/003_/vday_code.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="LLMs,Prompting" data-listing-date-sort="1707782400000" data-listing-file-modified-sort="1709003245962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="458">
+<div class="quarto-post image-right" data-index="0" data-categories="LLMs,Prompting" data-listing-date-sort="1707782400000" data-listing-file-modified-sort="1709003440606" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="458">
 <div class="thumbnail">
 <p><a href="./posts/003_/index.html" class="no-external"></a></p><a href="./posts/003_/index.html" class="no-external">
 <p class="card-img-top"><img src="posts/003_/hogwarts_houses.jpeg" alt="Hogwarts Houses Descriptions"  class="thumbnail-image card-img"/></p>
@@ -284,7 +241,7 @@ Nancy
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="LLMs,Prompting" data-listing-date-sort="1707609600000" data-listing-file-modified-sort="1709003245962" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1639">
+<div class="quarto-post image-right" data-index="1" data-categories="LLMs,Prompting" data-listing-date-sort="1707609600000" data-listing-file-modified-sort="1709003440606" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="9" data-listing-word-count-sort="1639">
 <div class="thumbnail">
 <p><a href="./posts/002_mom_stereotypes/index.html" class="no-external"></a></p><a href="./posts/002_mom_stereotypes/index.html" class="no-external">
 <p class="card-img-top"><img src="posts/002_mom_stereotypes/clairevsgloria.jpeg" alt="Alt text"  class="thumbnail-image card-img"/></p>
